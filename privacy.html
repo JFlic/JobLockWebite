@@ -1,0 +1,278 @@
+<!doctype html>
+<!--
+  ============================================================================
+  BEFORE YOU DEPLOY — two placeholders to replace:
+
+  1. privacy@joblock.app        → an alias that actually forwards to you.
+  2. Jack Flickinger            → your LLC's name, once it exists. Search for
+                                  "Jack Flickinger" in this file and in
+                                  index.html; it appears in the publisher line
+                                  and the contact section.
+
+  Keep the "Last updated" date honest — change it whenever the substance
+  changes, not on every typo fix.
+  ============================================================================
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — JobLock</title>
+<meta name="description" content="JobLock collects nothing. No accounts, no servers, no analytics. Everything stays on your iPhone.">
+<style>
+  :root {
+    --brand: #0470AC;
+    --brand-dark: #025189;
+    --brand-surface: #EAF4FA;
+    --ink: #101E2B;
+    --ink-secondary: #6B7A88;
+    --bg: #FFFFFF;
+    --surface: #F1F5F8;
+    --border: #DCE5EC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --brand: #4FA8DA;
+      --brand-dark: #7CC3EA;
+      --brand-surface: #12252F;
+      --ink: #E8EEF3;
+      --ink-secondary: #9DB0BF;
+      --bg: #0C1419;
+      --surface: #131F27;
+      --border: #22323D;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 20px 96px;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  header { padding: 56px 0 8px; }
+  .eyebrow {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--brand-surface);
+    color: var(--brand);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  h1 {
+    font-size: clamp(30px, 6vw, 40px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 20px 0 6px;
+  }
+  .updated { color: var(--ink-secondary); font-size: 15px; margin: 0; }
+  h2 {
+    font-size: 21px;
+    letter-spacing: -0.01em;
+    margin: 44px 0 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  h3 { font-size: 17px; margin: 26px 0 6px; }
+  p, li { color: var(--ink); }
+  a { color: var(--brand); text-underline-offset: 2px; }
+  ul { padding-left: 22px; }
+  li { margin: 8px 0; }
+  strong { font-weight: 650; }
+  .callout {
+    background: var(--brand-surface);
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin: 28px 0 8px;
+  }
+  .callout p:first-child { margin-top: 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .lede { font-size: 19px; }
+  .note {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 15.5px;
+    color: var(--ink-secondary);
+  }
+  .note strong { color: var(--ink); }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15.5px; }
+  th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 650; }
+  .scroll { overflow-x: auto; }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-secondary);
+    font-size: 15px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="eyebrow" href="/">← JobLock</a>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated 1 August 2026</p>
+</header>
+
+<div class="callout">
+  <p class="lede"><strong>JobLock collects nothing.</strong></p>
+  <p>There is no account, no server, and no analytics. The app has no code
+  that sends anything anywhere. Every job application you log, and every
+  setting you choose, is written to storage on your iPhone and stays there.
+  Delete the app and it is all gone.</p>
+</div>
+
+<p>That is the whole story, but the rest of this page spells out exactly what
+is stored, which permissions the app asks for, and why — because "we respect
+your privacy" is easy to write and hard to check.</p>
+
+<h2>What JobLock stores on your device</h2>
+
+<p>All of this lives in a database inside JobLock's own storage on your phone.
+None of it is transmitted.</p>
+
+<div class="scroll">
+<table>
+  <tr><th>What</th><th>Why it exists</th></tr>
+  <tr>
+    <td>Your job application log — company, role, job link, which board, and
+    any notes you write</td>
+    <td>It is the log. Showing it back to you is the point of the app.</td>
+  </tr>
+  <tr>
+    <td>Pay, location, work arrangement, employment type and posting age, read
+    from your confirmation screenshot</td>
+    <td>So an entry tells you what you actually applied for, months later.</td>
+  </tr>
+  <tr>
+    <td>The text JobLock read from the screenshot</td>
+    <td>So a wrong guess at the company or role is fixable, and so you can see
+    for yourself what the app read.</td>
+  </tr>
+  <tr>
+    <td>Two fingerprints of each confirmation — one of the image, one of the
+    text</td>
+    <td>To stop the same screenshot being logged twice. They are one-way
+    hashes; the image itself is not kept.</td>
+  </tr>
+  <tr>
+    <td>Where you said you heard about JobLock, during onboarding</td>
+    <td>Nothing yet. There is no analytics service for it to go to, and it has
+    never left your phone.</td>
+  </tr>
+  <tr>
+    <td>Which apps you chose to shield</td>
+    <td>Apple stores this as opaque tokens. See "Screen Time" below —
+    <strong>JobLock cannot read which apps you picked.</strong></td>
+  </tr>
+</table>
+</div>
+
+<h2>What JobLock does not do</h2>
+
+<ul>
+  <li><strong>It does not keep your screenshots.</strong> A confirmation
+  screenshot is read once — to check it really shows a submitted application
+  and to fingerprint it — and then discarded. No copy is saved.</li>
+  <li><strong>It has no servers.</strong> There is nowhere for your data to be
+  uploaded to, and no code in the app that could upload it.</li>
+  <li><strong>It has no account.</strong> You never give JobLock a name, an
+  email address, or a password.</li>
+  <li><strong>It contains no analytics, crash reporting, advertising or
+  tracking SDKs.</strong> Nothing measures how you use the app.</li>
+  <li><strong>It does not sell or share anything</strong>, because it does not
+  have anything to sell or share.</li>
+</ul>
+
+<p class="note">On the App Store, JobLock's privacy label reads
+<strong>Data Not Collected</strong>. That is not a technicality — it is
+accurate.</p>
+
+<h2>Permissions, and what each one is really for</h2>
+
+<h3>Photos</h3>
+<p>When a session is running, JobLock looks for the confirmation screenshot
+you just took, reads the text out of it on your device, and — if it counts —
+removes that screenshot from your camera roll for you. Deleted photos go to
+<em>Recently Deleted</em>, where iOS keeps them for 30 days, so nothing is
+irreversible.</p>
+
+<p class="note"><strong>Being straight with you:</strong> iOS grants photo
+access to your whole library, not to a slice of it. JobLock only ever looks at
+images created after you started a session, and only deletes ones it logged
+for you. That restriction is the app's own rule, not something iOS enforces —
+so you are taking JobLock's word for it. Nothing it reads leaves your phone
+either way.</p>
+
+<h3>Camera</h3>
+<p>Only used if you choose to photograph a confirmation shown on another
+screen — a laptop, say. The photo is read on your device and is not saved to
+your camera roll or anywhere else.</p>
+
+<h3>Screen Time</h3>
+<p>JobLock uses Apple's Screen Time framework to shield the apps you pick while
+you are applying. Apple deliberately hands the app <strong>opaque
+tokens</strong> rather than app names: JobLock can raise a shield over your
+selection and count how many things are in it, but it is never told which apps
+you chose. That selection is stored on your device and is never transmitted.</p>
+
+<h2>Other software inside JobLock</h2>
+
+<ul>
+  <li><strong>Google ML Kit Text Recognition</strong> reads the text in your
+  screenshots. The model is bundled inside the app and runs entirely on your
+  device — your images are not sent to Google or anyone else.</li>
+  <li><strong>Apple Screen Time</strong> (Family Controls and Managed
+  Settings) provides the app shielding described above.</li>
+  <li><strong>Apple's rating prompt.</strong> If you tap "Rate JobLock", iOS
+  shows its own rating sheet. Apple handles it end to end; JobLock is never
+  told whether you rated it or what you said.</li>
+  <li><strong>Links out.</strong> Tapping "Go to job posting" opens your
+  browser or the relevant app. Once you leave JobLock, that site's privacy
+  policy applies, not this one.</li>
+</ul>
+
+<h2>Deleting your data</h2>
+
+<ul>
+  <li><strong>Clear job list</strong>, on the home screen, erases every logged
+  application immediately and permanently.</li>
+  <li><strong>Deleting the app</strong> removes everything — the log, your
+  settings, and your shielded-app selection — in one step. Because none of it
+  was ever anywhere else, that is genuinely all of it.</li>
+</ul>
+
+<p>There is no "request my data" process, because there is no copy of your data
+for anyone to send you. It is on your phone, and you already have it.</p>
+
+<h2>Children</h2>
+<p>JobLock is not directed at children under 13 and is not designed for them.
+It collects no personal information from anyone, of any age.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the app's behaviour changes in a way that affects your privacy, this page
+gets updated and the date at the top changes with it. Material changes will
+also be called out in the app's release notes rather than slipped in quietly.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy, or about anything the app does, go to
+<a href="mailto:privacy@joblock.app">privacy@joblock.app</a>.</p>
+
+<footer>
+  <p>JobLock is developed by Jack Flickinger.<br>
+  Last updated 1 August 2026.</p>
+</footer>
+
+</div>
+</body>
+</html>
