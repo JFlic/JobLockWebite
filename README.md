@@ -16,21 +16,27 @@ is a 404 and the links break — which is exactly what happened once already.
 
 ---
 
-## Replace these things first
+## Still to replace
 
-1. **`privacy@thejoblockapp.com`** — an alias that actually forwards to you. Apple
-   requires a working contact method on the policy, and this address will be
-   scraped. Set it up before publishing; a forwarding alias can be killed and
-   replaced, your personal inbox cannot.
-2. **`Jack Flickinger`** — swap for the LLC's name once it exists. Until then
-   the individual name is correct, and it should match whatever the App Store
-   listing says.
-3. **`YOUR_STATE`** in `terms.html` — the state whose law governs and whose
-   courts hear disputes. Appears twice, in the *Governing law* section.
+1. **`support@thejoblockapp.com` / `privacy@thejoblockapp.com`** — neither
+   exists yet. Apple requires a working contact method on the policy, and
+   these addresses will be scraped. See *Email on the domain* below; set them
+   up before the App Store listing goes in.
+2. **`Jack Flickinger`** — swap for the LLC's name if one ever exists. There
+   is no LLC today, so the individual name is correct, and it must match
+   whatever the App Store listing says. Appears in the publisher line and the
+   contact section of all three pages.
 
-Also keep the **"Last updated"** date honest. Change it when the substance
+Settled: governing law is **Iowa** (`terms.html`, *Governing law*).
+
+The pages carry a **"Last updated"** date. Change it when the substance
 changes, not on every typo — a policy whose date moves for no reason is worse
 than one that doesn't move at all.
+
+The HTML files deliberately carry no editing notes in comments. Comments ship
+to the public in view-source, and a legal page that visibly announces its own
+unfilled placeholders undercuts the only thing it has going for it. Notes live
+here instead.
 
 ---
 
