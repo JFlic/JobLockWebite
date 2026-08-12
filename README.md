@@ -103,8 +103,41 @@ copy theirs rather than any you find in a blog post.
 **ImprovMX** is the zero-friction free option: keep DNS on Vercel, add its MX
 records plus `v=spf1 include:spf.improvmx.com ~all`, point both addresses at
 your Gmail, done in five minutes. Capped at 500 forwards/day, which is not a
-real limit here. Cloudflare Email Routing is equivalent but wants the
-nameservers moved off Vercel, so it is strictly more work for the same result.
+real limit here.
+
+### Cloudflare Email Routing, with the site still on Vercel
+
+Also free, and the sturdier of the two forwarders — but Cloudflare requires
+the whole zone: *"You must be using Cloudflare DNS to use Email Service."*
+There is no partial or CNAME-only mode for it. So the nameservers move to
+Cloudflare and Vercel keeps serving the site over records you recreate there.
+
+1. Add `thejoblockapp.com` to Cloudflare as a new site, Free plan.
+2. In **Vercel → Domains → `thejoblockapp.com` → Nameservers**, switch to
+   Cloudflare's two assigned nameservers. Vercel is the registrar, so this is
+   done in Vercel, not anywhere else. Allow up to 48 hours, usually far less.
+3. Recreate the site records in Cloudflare's DNS tab:
+
+   | Type | Name | Value | Proxy |
+   |---|---|---|---|
+   | `A` | `@` | `76.76.21.21` | **DNS only (grey)** |
+   | `CNAME` | `www` | `cname.vercel-dns.com` | **DNS only (grey)** |
+
+   > **The grey cloud is not optional.** A proxied (orange) record hides the
+   > real answer from Vercel, which blocks its certificate challenge — the
+   > symptom is a broken padlock or a redirect loop, not an obvious DNS error.
+
+4. Cloudflare → **Email** → Email Routing → enable. It adds its own MX, SPF
+   and DKIM records for you. Route `support@` and `privacy@` to your Gmail
+   and confirm the verification mail Cloudflare sends.
+
+That is receiving handled, free and permanently. To *reply* as the address
+rather than from Gmail, add it in Gmail under Settings → Accounts → **Send
+mail as**, using `smtp.gmail.com` port 587 with a Google App Password
+(requires 2-Step Verification). Gmail mails a confirmation code to
+`support@thejoblockapp.com`, Cloudflare forwards it to you, and from then on
+replies leave with the right From address. Add `include:_spf.google.com` to
+the SPF record if you do this.
 
 **iCloud+** is worth the dollar only if you want this in Apple Mail on the
 phone you already carry, and it is free at the margin if you already pay for
