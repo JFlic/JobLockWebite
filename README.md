@@ -184,10 +184,10 @@ things do change, in rough order of how badly they bite.
 
 **1. The privacy label, if you use a paywall SDK.** This is the expensive one.
 
-| How you charge | What happens to "Data Not Collected" |
+| How you charge | What happens to the label and the policy |
 |---|---|
-| StoreKit 2 directly | Survives. Apple processes the payment; you receive no personal data and run no third-party code. |
-| RevenueCat, Superwall, Adapty, etc. | **Dies.** These SDKs phone home with a user ID and device info, so you must declare *Purchases* and *Identifiers*, and `privacy.html` stops being true — it currently claims no networking code, no analytics SDKs, and nothing leaving the phone. |
+| StoreKit 2 directly | No new declarations. Apple processes the payment; you receive no personal data and run no new third-party code. |
+| RevenueCat, Superwall, Adapty, etc. | These SDKs phone home with a **user ID** and device info, so you must declare *Purchases* and *Identifiers* as **linked to the user** — a bigger step than ML Kit's unlinked data — and `privacy.html` needs a new section beside the ML Kit one. It currently says JobLock's own code sends nothing and nothing is linked to you. |
 
 Choosing StoreKit 2 keeps every claim on this site intact. Choosing a paywall
 SDK means rewriting the privacy policy, not just amending it.
@@ -218,7 +218,19 @@ code rather than written from a template:
 
 - no networking code anywhere in `lib/`
 - screenshots read once and discarded, never retained (`ApplicationLogger`)
-- ML Kit's text model runs on-device
+- ML Kit's text model runs on-device, **but ML Kit itself sends Google
+  usage and diagnostic data**. Its bundled manifest
+  (`ios/Pods/MLKitCommon/Frameworks/MLKitCommon.framework/PrivacyInfo.xcprivacy`
+  in the app repo) declares device ID, performance data, other diagnostic data,
+  product interaction, other user content and other data types — all not
+  linked, not tracking. So the App Store label is **not** "Data Not Collected",
+  and `privacy.html`'s *What Google's text recognition sends* section lists
+  those. The label answers in App Store Connect must match it. Apple will not
+  catch a mismatch at upload: ML Kit's manifest sits inside a static framework
+  and never reaches the app bundle.
+- onboarding answers (name, gender, age range, career blocker, phone hours,
+  source) and the daily goal are stored on the device only; the onboarding
+  signature is never stored
 - Screen Time selections are opaque tokens the app cannot resolve to app names
 - the photo permission is full-library, and the app's restriction to
   post-session images is its own promise rather than something iOS enforces —
@@ -227,5 +239,5 @@ code rather than written from a template:
 
 **If any of that changes, this page has to change with it.** The two most
 likely candidates are adding analytics and adding a backend for sync. Either
-one turns "Data Not Collected" on the App Store listing into a false
+one adds data the App Store label does not declare, which makes it a false
 declaration, which is a review rejection at best.
