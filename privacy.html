@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — JobLock</title>
-<meta name="description" content="No account, no server, and your job log stays on your iPhone. What JobLock stores, what it asks for, and what Google's text recognition sends.">
+<meta name="description" content="No account, and your job log stays on your iPhone. What JobLock stores, what it asks for, what Google's text recognition sends, and what the subscription check sends.">
 <style>
   :root {
     --brand: #0470AC;
@@ -108,18 +108,24 @@
 <header>
   <a class="eyebrow" href="/">← JobLock</a>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated 13 September 2026</p>
+  <p class="updated">Last updated 23 September 2026</p>
 </header>
 
 <div class="callout">
   <p class="lede"><strong>Your job log stays on your iPhone.</strong></p>
-  <p>There is no account and no server, and JobLock's own code sends nothing
-  anywhere. Every job application you log, every answer you give during
-  onboarding, and every setting you choose is written to storage on your iPhone
-  and stays there. Delete the app and it is all gone.</p>
-  <p>The one exception is not ours: the Google text-recognition software that
-  reads your screenshots sends Google its own usage and diagnostic data.
-  <a href="#google">Exactly what, below.</a></p>
+  <p>There is no account and no JobLock server. Every job application you log,
+  every answer you give during onboarding, and every setting you choose is
+  written to storage on your iPhone and stays there. Delete the app and it is
+  all gone.</p>
+  <p>Two things do leave the phone, and neither is your job log:</p>
+  <ul>
+    <li>the Google text-recognition software that reads your screenshots sends
+    Google its own usage and diagnostic data —
+    <a href="#google">exactly what, below</a>;</li>
+    <li>to check your subscription, the app sends RevenueCat an anonymous app
+    user ID and your App Store purchase receipt —
+    <a href="#purchases">details below</a>.</li>
+  </ul>
 </div>
 
 <p>The rest of this page spells out exactly what is stored, what leaves the
@@ -185,13 +191,16 @@ None of it is transmitted.</p>
   <li><strong>It does not keep your signature.</strong> The commitment you sign
   at the end of onboarding is drawn on screen and thrown away when you move on.
   It is never saved.</li>
-  <li><strong>It has no servers.</strong> There is nowhere for your data to be
-  uploaded to, and JobLock's own code has nothing that could upload it.</li>
+  <li><strong>It has no servers of its own.</strong> There is nowhere for your
+  job log, screenshots or onboarding answers to be uploaded to. The only thing
+  JobLock's code sends is the subscription check described
+  <a href="#purchases">below</a>.</li>
   <li><strong>It has no account.</strong> There is no sign-up, email address or
   password. The name you give during onboarding stays on your phone.</li>
   <li><strong>It adds no analytics, crash reporting or advertising of its
   own</strong>, and it does not track you across other apps or websites.</li>
-  <li><strong>It does not sell or share your information.</strong></li>
+  <li><strong>It does not sell your information</strong>, and shares nothing
+  beyond the subscription check described below.</li>
 </ul>
 
 <h2 id="google">What Google's text recognition sends</h2>
@@ -221,8 +230,32 @@ it. Google's handling of it is covered by
 <p class="note"><strong>Why this matters for the App Store label:</strong>
 because of ML Kit, JobLock's privacy label on the App Store is
 <strong>not</strong> "Data Not Collected". It lists the data above as data not
-linked to you. An earlier version of this page said the label read "Data Not
+linked to you, alongside the purchase history and user ID used for the
+<a href="#purchases">subscription check</a>. An earlier version of this page said the label read "Data Not
 Collected"; that did not account for ML Kit, and it was wrong.</p>
+
+<h2 id="purchases">Purchases and subscriptions</h2>
+
+<p>JobLock is paid for with an auto-renewing subscription. Payment is
+processed by <strong>Apple</strong>: JobLock never sees your card, your
+billing address or your Apple Account details.</p>
+
+<p>Subscriptions are managed through <strong>RevenueCat, Inc.</strong>, a
+service that tells the app whether your subscription is active. To do that,
+the app sends RevenueCat:</p>
+
+<ul>
+  <li>an <strong>anonymous app user ID</strong>, generated on your phone and not
+  tied to your name, email or Apple Account;</li>
+  <li>your <strong>App Store purchase receipt</strong> — which subscription you
+  bought, when, and whether it is active, in a trial, renewed or cancelled.</li>
+</ul>
+
+<p>RevenueCat does <strong>not</strong> receive your name, your email, your
+screenshots, your job applications or your onboarding answers. JobLock sets no
+other attributes on your RevenueCat record. RevenueCat's handling of this data
+is covered by <a href="https://www.revenuecat.com/privacy">RevenueCat's Privacy
+Policy</a>.</p>
 
 <h2>Permissions, and what each one is really for</h2>
 
@@ -264,6 +297,11 @@ you chose. That selection is stored on your device and is never transmitted.</p>
   <li><strong>Google ML Kit Text Recognition</strong> reads the text in your
   screenshots on your device. It sends Google its own usage and diagnostic
   data — see <a href="#google">What Google's text recognition sends</a>.</li>
+  <li><strong>RevenueCat</strong> checks whether your subscription is active.
+  It receives an anonymous app user ID and your App Store receipt — see
+  <a href="#purchases">Purchases and subscriptions</a>.</li>
+  <li><strong>Apple In-App Purchase</strong> handles payment, trials, renewals
+  and cancellations. Apple's own privacy policy covers it.</li>
   <li><strong>Apple Screen Time</strong> (Family Controls and Managed
   Settings) provides the app shielding described above.</li>
   <li><strong>Apple's rating prompt.</strong> If you tap "Rate JobLock", iOS
@@ -281,15 +319,23 @@ log, your onboarding answers, your settings, and your shielded-app selection —
 in one step. JobLock never sent any of it anywhere, so no copy of it survives
 somewhere you cannot reach.</p>
 
-<p>There is no "request my data" process, because JobLock holds no copy of your
-data to send you. It is on your phone, and you already have it. The diagnostic
-data ML Kit sends goes to Google, not to JobLock, and is not linked to you.</p>
+<p><strong>Deleting the app does not cancel your subscription.</strong> Cancel
+it in Settings → [your name] → Subscriptions. Your RevenueCat record — the
+anonymous ID and purchase receipt — stays with RevenueCat so a reinstall can
+restore your subscription. If you want it deleted, email
+<a href="mailto:privacy@thejoblockapp.com">privacy@thejoblockapp.com</a> and
+it will be.</p>
+
+<p>There is no other "request my data" process, because JobLock holds no copy
+of your data to send you. It is on your phone, and you already have it. The
+diagnostic data ML Kit sends goes to Google, not to JobLock, and is not linked
+to you.</p>
 
 <h2>Children</h2>
 <p>JobLock is not directed at children under 13 and is not designed for them.
 JobLock itself sends no personal information anywhere, from anyone of any age;
-the Google diagnostic data described above is sent the same way for every
-user.</p>
+the Google diagnostic data and the subscription check described above work the
+same way for every user.</p>
 
 <h2>Changes to this policy</h2>
 <p>If the app's behaviour changes in a way that affects your privacy, this page
@@ -302,7 +348,7 @@ also be called out in the app's release notes rather than slipped in quietly.</p
 
 <footer>
   <p>JobLock is developed by Jack Flickinger.<br>
-  <a href="/terms">Terms of service</a> · Last updated 13 September 2026.</p>
+  <a href="/terms">Terms of service</a> · Last updated 23 September 2026.</p>
 </footer>
 
 </div>
